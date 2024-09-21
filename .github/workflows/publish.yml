@@ -7,6 +7,8 @@ on:
 permissions:
   contents: read
   pages: write
+  # deploy job needs this for pages publish
+  id-token: write
 
 # do not run this at the same time as other pages tasks
 concurrency:
