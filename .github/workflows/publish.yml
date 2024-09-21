@@ -42,7 +42,6 @@ jobs:
       - name: Verify Key Import
         run: >
           gpg --list-keys ;
-          echo "${{ steps.import_gpg.outputs.fingerprint }}" ;
           echo GPG_FINGERPRINT="${{ steps.import_gpg.outputs.fingerprint }}" >> $GITHUB_ENV ;
 
       - name: Build Repositories

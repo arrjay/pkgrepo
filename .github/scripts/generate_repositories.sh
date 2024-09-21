@@ -5,6 +5,9 @@ SITE_TOP="$(pwd)/_site"
 POOL_TOP="${SITE_TOP}/pool"
 DIST_TOP="${SITE_TOP}/dists"
 
+# turn off gpg ever asking anything
+export GPG_TTY=""
+
 # from https://github.com/terminate-notice/terminate-notice.github.io/blob/main/.github/scripts/build_repos.sh
 generate_hashes() {
   HASH_TYPE="$1"
@@ -56,4 +59,6 @@ for ent in "${POOL_TOP}"/* ; do
       generate_hashes SHA256 sha256sum
       popd >/dev/null 2>&1
   } > "${distdir}/Release"
+  gpg --detach-sign --armor --sign > "${distdir}/Release.gpg" < "${distdir}/Release"
+  gpg --detach-sign --armor --sign --clearsign > "${distdir}/InRelease" < "${distdir}/Release"
 done
