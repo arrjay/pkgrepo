@@ -28,7 +28,7 @@ jobs:
         uses: actions/configure-pages@v3
 
       - name: Build Repositories
-        run: ./github/scripts/generate_repositories.sh
+        run: ./.github/scripts/generate_repositories.sh
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
