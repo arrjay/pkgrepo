@@ -36,7 +36,7 @@ for ent in "${POOL_TOP}"/* ; do
   for bin in all amd64 ; do
     mkdir -p "${distdir}/main/binary-${bin}"
     pushd "${SITE_TOP}" >/dev/null 2>&1
-      dpkg-scanpackages -a "${bin}" ".${ent#"${SITE_TOP}"}/" > "${distdir}/main/binary-${bin}/Packages"
+      dpkg-scanpackages -a "${bin}" "${ent#"${SITE_TOP}/"}/" > "${distdir}/main/binary-${bin}/Packages"
     popd >/dev/null 2>&1
     gzip -9 > "${distdir}/main/binary-${bin}/Packages.gz" < "${distdir}/main/binary-${bin}/Packages"
     bzip2 -9 > "${distdir}/main/binary-${bin}/Packages.bz2" < "${distdir}/main/binary-${bin}/Packages"
