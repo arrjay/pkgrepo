@@ -29,6 +29,22 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
+      - name: Configure environment
+        run: >
+          echo GNUPGHOME="$(mktemp -d /tmp/pgpkeys-XXXXXXXX)" >> $GITHUB_ENV ;
+
+      - name: Import GPG Key
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key ${{ secrets.PKEY }}
+
+      - name: Verify Key Import
+        run: >
+          gpg --list-keys ;
+          echo "${{ steps.import_gpg.outputs.fingerprint }}" ;
+          echo GPG_FINGERPRINT="${{ steps.import_gpg.outputs.fingerprint }}" >> $GITHUB_ENV ;
+
       - name: Build Repositories
         run: ./.github/scripts/generate_repositories.sh
 
