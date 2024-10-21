@@ -28,7 +28,7 @@ grep -v '^#' < .github/config/repositories.txt | while IFS= read -r repo ; do
     debout="${POOL_TOP}/${distro}-${version}"
     [[ -e "${releasejson}" ]] || curl -L -o "${releasejson}" "https://api.github.com/repos/arrjay/${repo}/releases/tags/${tag}"
     asset_url="$(jq -r '.assets[] | select(.name=="'"${assetfile}"'").url' < "${releasejson}")"
-    [[ -e "${asset_url}" ]] || curl -L -H 'Accept: application/octet-stream' -o "${assetpath}" "${asset_url}"
+    [[ -n "${asset_url}" ]] && curl -L -H 'Accept: application/octet-stream' -o "${assetpath}" "${asset_url}"
     mkdir -p "${debout}"
     [[ -e "${assetpath}" ]] && bsdtar xf "${assetpath}" -C "${debout}"
   done
