@@ -30,7 +30,7 @@ grep -v '^#' < .github/config/repositories.txt | while IFS= read -r repo ; do
     asset_url="$(jq -r '.assets[] | select(.name=="'"${assetfile}"'").url' < "${releasejson}")"
     [[ -n "${asset_url}" ]] && curl -L -H 'Accept: application/octet-stream' -o "${assetpath}" "${asset_url}"
     mkdir -p "${debout}"
-    [[ -e "${assetpath}" ]] && bsdtar xf "${assetpath}" -C "${debout}"
+    [[ -e "${assetpath}" ]] && bsdtar xf "${assetpath}" -C "${debout}" || true
   done
 done
 
