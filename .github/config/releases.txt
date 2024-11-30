@@ -1,4 +1,3 @@
 clevis:21.02
-refpolicy:2.20240916.6
-refpolicy:2.20240916.7
 refpolicy:2.20240916.8
+refpolicy:2.20240916.10
