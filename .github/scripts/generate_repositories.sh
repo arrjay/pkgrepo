@@ -36,7 +36,7 @@ done
 
 for ent in "${POOL_TOP}"/* ; do
   distdir="${DIST_TOP}/${ent##*-}"
-  for bin in all amd64 ; do
+  for bin in all amd64 armhf ; do
     mkdir -p "${distdir}/main/binary-${bin}"
     pushd "${SITE_TOP}" >/dev/null 2>&1
       dpkg-scanpackages -a "${bin}" "${ent#"${SITE_TOP}/"}/" > "${distdir}/main/binary-${bin}/Packages"
