@@ -2,4 +2,4 @@ clevis:21.02
 refpolicy:2.20240916.17
 refpolicy:2.20240916.18
 ustreamer-debian:6.37.1
-usb-gadget-scripts:0.2.1
+usb-gadget-scripts:0.2.2
