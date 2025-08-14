@@ -1,4 +1,5 @@
 debian-bookworm
+debian-trixie
 ubuntu-jammy
 ubuntu-noble
 #fedora-40
