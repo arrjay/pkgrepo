@@ -2,7 +2,7 @@ clevis:21.2.1
 # for bookworm
 refpolicy:2.20240916.18
 # for trixie
-refpolicy:2.20250213.1
+refpolicy:2.20250213.2
 ustreamer-debian:6.37.1
 usb-gadget-scripts:0.2.4
 tinypilot:0.12.4
