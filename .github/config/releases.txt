@@ -1,6 +1,6 @@
 clevis:21.2.1
 # for bookworm
-refpolicy:2.20240916.18
+refpolicy:2.20240916.19
 # for trixie
 refpolicy:2.20250213.6
 ustreamer-debian:6.37.1
