@@ -1,11 +1,19 @@
 clevis:21.2.1
+
 # for bookworm
 refpolicy:2.20240916.19
 # for trixie
 refpolicy:2.20250213.6
+
 janus-debian:0.20260228.4
+
+# for bookworm
 ustreamer-debian:6.37.1
+# for trixie
+ustreamer-debian:6.37.2.1
+
 usb-gadget-scripts:0.2.4
+
 # bookworm is currently this
 tinypilot:0.12.4
 # trixie...
