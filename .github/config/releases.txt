@@ -20,4 +20,4 @@ usb-gadget-scripts:0.2.4
 # bookworm is currently this
 tinypilot:0.12.4
 # trixie...
-tinypilot:0.14.2
+tinypilot:0.14.3
