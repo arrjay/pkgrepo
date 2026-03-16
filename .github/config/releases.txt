@@ -21,3 +21,5 @@ usb-gadget-scripts:0.2.4
 tinypilot:0.12.4
 # trixie...
 tinypilot:0.14.3
+# this exists because debian's version currently crashes on running it
+UCarp:20260315.1
