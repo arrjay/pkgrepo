@@ -15,7 +15,7 @@ ustreamer-debian:6.37.1
 ustreamer-debian:6.37.2.1
 #
 # for everyone
-usb-gadget-scripts:0.2.4
+usb-gadget-scripts:0.2.4.1
 #
 # bookworm is currently this
 tinypilot:0.12.4
